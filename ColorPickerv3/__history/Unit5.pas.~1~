@@ -1,0 +1,46 @@
+unit Unit5;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm5 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm5.Button1Click(Sender: TObject);
+begin
+  Form5.Close;
+end;
+
+procedure TForm5.FormClick(Sender: TObject);
+begin
+  ActiveControl := nil;
+end;
+
+procedure TForm5.FormShow(Sender: TObject);
+begin
+    Memo1.text := 'MQTT Client' + #13#10#13#10
+  + 'Tarih: 08-01-2023' + #13#10#13#10
+  + 'Email: sadikk.ozel@gmail.com';
+end;
+
+end.
